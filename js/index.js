@@ -1,6 +1,3 @@
-/**
- * @type{document.querySelector}$
- */
 const $ = document.querySelector.bind(document)
 
 /**
@@ -12,7 +9,7 @@ const wrapper = $('.wrapper')
  */
 const proccessCanvas = $('#proccessCanvas')
 
-const canvas = document.createElement('canvas')
+const canvas = $('canvas')
 wrapper.appendChild(canvas)
 
 const createCaptureInput = () => {
