@@ -28,7 +28,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/photo-from-web",
+    "start_url": "/",
     "display": "fullscreen",
     "orientation": "portrait",
     "theme_color": "#f3a521",
