@@ -1,5 +1,5 @@
 
-let cacheName = 'cache-v2';
+let cacheName = 'cache-v3';
 let filesToCache = [
     '/',
     '/index.html',
