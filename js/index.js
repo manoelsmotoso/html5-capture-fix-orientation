@@ -119,6 +119,9 @@ const processImage = () => {
     ctx.putImageData(pixels, 0, 0);
     let data = canvas.toDataURL('image/png');
     downloadImage(data)
+    /**
+     * todo: upload image file to a API
+    */
 }
 
 const capture = createCaptureInput()
