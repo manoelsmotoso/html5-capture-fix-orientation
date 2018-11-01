@@ -1,39 +1,29 @@
-body {
+.container {
     display: flex;
+    /* border:1px solid rgb(0, 195, 255); */
     justify-content: space-around;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
     height: 100vh;
-    max-height: 100%;
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    max-height: 100%;
+    max-height: 99%;
+    padding: -8PX;
 }
 
-.wrapper {
+.canvas__box {
+    flex: 10;
+    padding: 4px;
+    /* border: 1px solid yellow; */
+}
+
+.canvas__box canvas {
     width: 100%;
-    /* border: solid 0.5px red; */
-    padding: 0;
-    margin: 0;
+    height: auto;
+    padding: -1px;
+    border: 1px dotted #000;
+}
+
+.canvas__box:before {
+    content: "Toque no quadro abaixo para capturar";
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    flex:10;
-}
-.wrapper:before{
-    content: "capturar";
-    font-size: 20px;
-    text-transform: uppercase;
-    color: gray;
-    letter-spacing: 3pt;
-}
-.wrapper:hover:before{
-    content: ""
 }
 
 .btn {
@@ -49,48 +39,40 @@ body {
 /* Green */
 
 .btn--success {
-    border-color: #4CAF50;
-    color: green;
+    border-color: rgb(248, 152, 42);
+    color: rgb(248, 152, 42);
 }
 
 .btn--success:hover {
-    background-color: #4CAF50;
+    background-color: rgba(253, 165, 65, 0.966);
+    ;
     color: white;
 }
 
 .btn__box {
-    flex:2;
-    justify-content: space-around;
-    display: flex;
-}
-
-canvas {
-    width: 100%;
-    height: auto;
+    flex: 2;
+    /* border: 1px dotted blue; */
+    text-align: center;
 }
 
 @media (orientation: landscape) {
-    body {
+    .container {
         flex-direction: row;
     }
-    .wrapper{
-        flex: 6;
+    .canvas__box {
+        flex: 9
     }
-    canvas {
-        width: auto;
+    .btn__box {
+        flex: 1
+    }
+    .canvas__box canvas {
         height: 100%;
+        width: auto;
     }
 }
 
 @media (orientation: portrait) {
-    body {
+    .container {
         flex-direction: column;
-    }
-    .btn {
-        width: 100%;
-    }
-    canvas {
-        width: 100%;
-        height: auto;
     }
 }

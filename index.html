@@ -10,8 +10,8 @@
     <title>Photo with a Web Page</title>
 </head>
 
-<body>
-    <div class="wrapper">
+<body class="container">
+    <div class="canvas__box">
         <canvas></canvas>
     </div>
     <div class="btn__box">
@@ -22,7 +22,7 @@
     <script>
         let usePwa = false;
 
-        if (usePwa && 'serviceWorker' in navigator) {
+        if (usePwa && 'serviceWorker' in navigator && window.location.hostname != 'localhost') {
             window.addEventListener('load', function () {
                 navigator.serviceWorker
                     .register('/sw.js')

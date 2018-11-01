@@ -1,16 +1,13 @@
 const $ = document.querySelector.bind(document)
 
-/**
- * @type{HTMLDivElement}wrapper
- */
-const wrapper = $('.wrapper')
-/**
- * @type{HTMLButtonElement}proccessCanvas
- */
+/** @type {HTMLDivElement} canvasBox */
+const canvasBox = $('.canvas__box')
+
+/** @type {HTMLButtonElement} proccessCanvas */
 const proccessCanvas = $('#proccessCanvas')
 
+/** @type {HTMLCanvasElement} canvas */
 const canvas = $('canvas')
-wrapper.appendChild(canvas)
 
 const createCaptureInput = () => {
     let input = document.createElement('input');
@@ -77,6 +74,7 @@ const drawImage = imageFile => {
 
             ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+
             if (transform === 'left') {
                 ctx.setTransform(0, -1, 1, 0, 0, height);
                 ctx.drawImage(img, 0, 0, height, width);
@@ -90,6 +88,7 @@ const drawImage = imageFile => {
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 ctx.drawImage(img, 0, 0, width, height);
             }
+
             ctx.setTransform(1, 0, 0, 1, 0, 0);
         };
 
@@ -131,5 +130,5 @@ capture.addEventListener('change', (e) => {
     drawImage(imageFile)
 })
 
-wrapper.addEventListener('click', () => capture.click(), false)
-proccessCanvas.addEventListener('click', () => processImage(), false)
+canvasBox.addEventListener('click', () => capture.click(), false)
+proccessCanvas.addEventListener('click', processImage, false)
